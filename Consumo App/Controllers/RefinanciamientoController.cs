@@ -359,6 +359,13 @@ namespace Consumo_App.Controllers
                     if (partes.Length == 3 && int.TryParse(partes[2], out int num))
                         secuencial = num + 1;
                 }
+
+                //if (!dto.NuevaFechaVencimiento.HasValue)
+                   // return BadRequest(new { message = "La nueva fecha de vencimiento es obligatoria." });
+
+               // if (dto.NuevaFechaVencimiento.Value < new DateTime(1753, 1, 1))
+                   // return BadRequest(new { message = "La fecha de vencimiento no es válida." });
+
                 var numeroRefinanciamiento = $"REF-{año}-{secuencial:00000}";
 
                 // Insertar refinanciamiento
@@ -373,19 +380,22 @@ namespace Consumo_App.Controllers
                          @MontoOriginal, 0, @MontoPendiente, @FechaVenc,
                          @Estado, @Motivo, @Notas, @CreadoUtc, @UsuarioId)";
 
+                var fechaRefinanciamiento = DateTime.UtcNow;
+                var nuevaFechaVencimiento = fechaRefinanciamiento.AddDays(30);
+
                 var refinanciamientoId = await connection.ExecuteScalarAsync<int>(sqlInsert, new
                 {
                     DocId = dto.CxcDocumentoId,
                     EmpresaId = (int)doc.EmpresaId,
                     NumRef = numeroRefinanciamiento,
-                    Fecha = DateTime.UtcNow,
+                    Fecha = fechaRefinanciamiento,
                     MontoOriginal = montoPendiente,
                     MontoPendiente = montoPendiente,
-                    FechaVenc = dto.NuevaFechaVencimiento,
+                    FechaVenc = nuevaFechaVencimiento,
                     Estado = (int)EstadoRefinanciamiento.Pendiente,
                     dto.Motivo,
                     dto.Notas,
-                    CreadoUtc = DateTime.UtcNow,
+                    CreadoUtc = fechaRefinanciamiento,
                     UsuarioId = _user.Id
                 }, transaction);
 
@@ -418,15 +428,28 @@ namespace Consumo_App.Controllers
                     Id = refinanciamientoId,
                     NumeroRefinanciamiento = numeroRefinanciamiento,
                     MontoOriginal = montoPendiente,
-                    FechaVencimiento = dto.NuevaFechaVencimiento,
+                    //FechaVencimiento = dto.NuevaFechaVencimiento,
                     mensaje = "Refinanciamiento creado exitosamente. El saldo ha sido restaurado a los empleados."
                 });
             }
-            catch
+
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+
+                return StatusCode(500, new
+                {
+                    message = "Error al crear el refinanciamiento",
+                    error = ex.Message,
+                    stack = ex.StackTrace
+                });
+            }
+
+            /*catch
             {
                 transaction.Rollback();
                 throw;
-            }
+            }*/
         }
 
         #endregion
@@ -614,7 +637,7 @@ namespace Consumo_App.Controllers
     public class CrearRefinanciamientoDto
     {
         public int CxcDocumentoId { get; set; }
-        public DateTime NuevaFechaVencimiento { get; set; }
+       // public DateTime? NuevaFechaVencimiento { get; set; }
         public string? Motivo { get; set; }
         public string? Notas { get; set; }
     }
