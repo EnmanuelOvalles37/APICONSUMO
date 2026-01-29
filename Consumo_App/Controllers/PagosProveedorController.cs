@@ -597,17 +597,13 @@ namespace Consumo_App.Controllers
 
         #region Reportes
 
-        /// <summary>
-        /// GET /api/pagos-proveedor/reporte-comisiones
-        /// </summary>
         [HttpGet("reporte-comisiones")]
         public async Task<IActionResult> ReporteComisiones(
-            [FromQuery] DateTime desde,
-            [FromQuery] DateTime hasta,
-            [FromQuery] int? proveedorId)
+    [FromQuery] DateTime desde,
+    [FromQuery] DateTime hasta,
+    [FromQuery] int? proveedorId)
         {
             using var connection = _connectionFactory.Create();
-
             var whereClause = "WHERE c.Reversado = 0 AND c.Fecha >= @Desde AND c.Fecha < @Hasta";
             var parameters = new DynamicParameters();
             parameters.Add("Desde", desde);
@@ -621,57 +617,81 @@ namespace Consumo_App.Controllers
 
             // Totales
             var sqlTotales = $@"
-                SELECT 
-                    COUNT(*) AS TotalConsumos,
-                    ISNULL(SUM(c.Monto), 0) AS MontoBruto,
-                    ISNULL(SUM(c.MontoComision), 0) AS MontoComision,
-                    ISNULL(SUM(c.MontoNetoProveedor), 0) AS MontoNeto
-                FROM Consumos c
-                {whereClause}";
+        SELECT 
+            COUNT(*) AS TotalConsumos,
+            ISNULL(SUM(c.Monto), 0) AS MontoBruto,
+            ISNULL(SUM(c.MontoComision), 0) AS MontoComision,
+            ISNULL(SUM(c.MontoNetoProveedor), 0) AS MontoNeto
+        FROM Consumos c
+        {whereClause}";
 
             var totales = await connection.QueryFirstAsync<dynamic>(sqlTotales, parameters);
 
             // Por proveedor
             var sqlPorProveedor = $@"
-                SELECT 
-                    c.ProveedorId,
-                    p.Nombre AS ProveedorNombre,
-                    COUNT(*) AS Consumos,
-                    SUM(c.Monto) AS MontoBruto,
-                    SUM(c.MontoComision) AS MontoComision,
-                    SUM(c.MontoNetoProveedor) AS MontoNeto,
-                    AVG(c.PorcentajeComision) AS PorcentajePromedio
-                FROM Consumos c
-                INNER JOIN Proveedores p ON c.ProveedorId = p.Id
-                {whereClause}
-                GROUP BY c.ProveedorId, p.Nombre
-                ORDER BY SUM(c.MontoComision) DESC";
+        SELECT 
+            c.ProveedorId,
+            p.Nombre AS ProveedorNombre,
+            COUNT(*) AS Consumos,
+            ISNULL(SUM(c.Monto), 0) AS MontoBruto,
+            ISNULL(SUM(c.MontoComision), 0) AS MontoComision,
+            ISNULL(SUM(c.MontoNetoProveedor), 0) AS MontoNeto,
+            ISNULL(AVG(c.PorcentajeComision), 0) AS PorcentajePromedio
+        FROM Consumos c
+        INNER JOIN Proveedores p ON c.ProveedorId = p.Id
+        {whereClause}
+        GROUP BY c.ProveedorId, p.Nombre
+        ORDER BY SUM(c.MontoComision) DESC";
 
-            var porProveedor = await connection.QueryAsync<dynamic>(sqlPorProveedor, parameters);
+            var porProveedorRaw = await connection.QueryAsync<dynamic>(sqlPorProveedor, parameters);
 
             // Por día
             var sqlPorDia = $@"
-                SELECT 
-                    CAST(c.Fecha AS DATE) AS Fecha,
-                    COUNT(*) AS Consumos,
-                    SUM(c.Monto) AS MontoBruto,
-                    SUM(c.MontoComision) AS MontoComision
-                FROM Consumos c
-                {whereClause}
-                GROUP BY CAST(c.Fecha AS DATE)
-                ORDER BY CAST(c.Fecha AS DATE)";
+        SELECT 
+            CAST(c.Fecha AS DATE) AS Fecha,
+            COUNT(*) AS Consumos,
+            ISNULL(SUM(c.Monto), 0) AS MontoBruto,
+            ISNULL(SUM(c.MontoComision), 0) AS MontoComision
+        FROM Consumos c
+        {whereClause}
+        GROUP BY CAST(c.Fecha AS DATE)
+        ORDER BY CAST(c.Fecha AS DATE)";
 
-            var porDia = await connection.QueryAsync<dynamic>(sqlPorDia, parameters);
+            var porDiaRaw = await connection.QueryAsync<dynamic>(sqlPorDia, parameters);
+
+            // MAPEO EXPLÍCITO PARA GARANTIZAR QUE NO HAYA NULLS
+            var porProveedor = porProveedorRaw.Select(p => new
+            {
+                proveedorId = (int)p.ProveedorId,
+                proveedorNombre = (string)p.ProveedorNombre ?? "",
+                consumos = (int)p.Consumos,
+                montoBruto = (decimal)(p.MontoBruto ?? 0),
+                montoComision = (decimal)(p.MontoComision ?? 0),
+                montoNeto = (decimal)(p.MontoNeto ?? 0),
+                porcentajePromedio = (decimal)(p.PorcentajePromedio ?? 0)
+            }).ToList();
+
+            var porDia = porDiaRaw.Select(d => new
+            {
+                fecha = ((DateTime)d.Fecha).ToString("yyyy-MM-dd"),
+                consumos = (int)d.Consumos,
+                montoBruto = (decimal)(d.MontoBruto ?? 0),
+                montoComision = (decimal)(d.MontoComision ?? 0)
+            }).ToList();
 
             return Ok(new
             {
-                periodo = new { desde, hasta },
+                periodo = new
+                {
+                    desde = desde.ToString("yyyy-MM-dd"),
+                    hasta = hasta.ToString("yyyy-MM-dd")
+                },
                 totales = new
                 {
-                    TotalConsumos = (int)totales.TotalConsumos,
-                    MontoBruto = (decimal)totales.MontoBruto,
-                    MontoComision = (decimal)totales.MontoComision,
-                    MontoNeto = (decimal)totales.MontoNeto
+                    totalConsumos = (int)totales.TotalConsumos,
+                    montoBruto = (decimal)(totales.MontoBruto ?? 0),
+                    montoComision = (decimal)(totales.MontoComision ?? 0),
+                    montoNeto = (decimal)(totales.MontoNeto ?? 0)
                 },
                 porProveedor,
                 porDia

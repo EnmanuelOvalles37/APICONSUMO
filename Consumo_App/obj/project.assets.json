@@ -2473,11 +2473,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo App\\ConsumoApp.csproj",
+      "projectUniqueName": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\ConsumoApp.csproj",
       "projectName": "ConsumoApp",
-      "projectPath": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo App\\ConsumoApp.csproj",
+      "projectPath": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\ConsumoApp.csproj",
       "packagesPath": "C:\\Users\\Isaac\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo App\\obj\\",
+      "outputPath": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

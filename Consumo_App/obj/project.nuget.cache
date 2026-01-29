@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Zu/hnI2KLFs=",
+  "dgSpecHash": "IwCXHgIXeUQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo App\\ConsumoApp.csproj",
+  "projectFilePath": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\ConsumoApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Isaac\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Isaac\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
