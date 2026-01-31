@@ -322,6 +322,33 @@ namespace Consumo_App.Controllers
             });
         }
 
+        [HttpGet("contexto")]
+        [Authorize]
+        public async Task<IActionResult> GetContexto()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (!int.TryParse(userIdClaim, out var userId))
+                return Unauthorized();
+
+            // Obtener asignación activa del usuario
+            var asignacion = await _asignacionSql.GetAsignacionActivaPorUsuarioAsync(userId);
+
+            if (asignacion == null)
+                return NotFound(new { message = "No tienes una asignación activa" });
+
+            return Ok(new
+            {
+                proveedorId = asignacion.ProveedorId,
+                proveedorNombre = asignacion.Proveedor?.Nombre,
+                tiendaId = asignacion.TiendaId,
+                tiendaNombre = asignacion.Tienda?.Nombre,
+                cajaId = asignacion.CajaId,
+                cajaNombre = asignacion.Caja?.Nombre,
+                rol = asignacion.Rol
+            });
+        }
+
         // ============================
         // LOGOUT
         // ============================

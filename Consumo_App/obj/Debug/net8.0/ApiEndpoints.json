@@ -483,6 +483,16 @@
   },
   {
     "ContainingType": "Consumo_App.Controllers.AuthController",
+    "Method": "GetContexto",
+    "RelativePath": "api/Auth/contexto",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Consumo_App.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",

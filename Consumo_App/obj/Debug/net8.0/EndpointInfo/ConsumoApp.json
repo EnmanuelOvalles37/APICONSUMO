@@ -846,6 +846,18 @@
         }
       }
     },
+    "/api/Auth/contexto": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Auth/logout": {
       "post": {
         "tags": [
