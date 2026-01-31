@@ -107,15 +107,15 @@ namespace Consumo_App.Controllers
             var clean = new string(cedula.Where(char.IsDigit).ToArray());
 
             var matches = await conn.QueryAsync<ClienteMatchDto>(@"
-                SELECT 
-                    c.Id,
-                    c.Nombre,
-                    c.EmpresaId,
-                    e.Nombre AS EmpresaNombre,
-                    c.Saldo
-                FROM Clientes c
-                INNER JOIN Empresas e ON c.EmpresaId = e.Id
-                WHERE REPLACE(REPLACE(c.Cedula, '-', ''), ' ', '') = @Cedula",
+        SELECT 
+            c.Id,
+            c.Nombre,
+            c.EmpresaId,
+            e.Nombre AS EmpresaNombre,
+            CAST(ISNULL(c.Saldo, 0) AS DECIMAL(18,2)) AS Saldo
+        FROM Clientes c
+        INNER JOIN Empresas e ON c.EmpresaId = e.Id
+        WHERE REPLACE(REPLACE(c.Cedula, '-', ''), ' ', '') = @Cedula",
                 new { Cedula = clean });
 
             var matchesList = matches.ToList();

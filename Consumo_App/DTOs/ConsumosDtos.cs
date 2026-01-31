@@ -52,13 +52,13 @@
 
     public class RegistrarConsumoDto
     {
-        public int ClienteId { get; set; }
+        public int ClienteId { get; set; }  
         public int ProveedorId { get; set; }
         public int TiendaId { get; set; }
         public int CajaId { get; set; }
         public decimal Monto { get; set; }
         public string? Concepto { get; set; }
-        public string? Referencia { get; set; }
         public string? Nota { get; set; }
+        public string? Referencia { get; set; }
     }
 }

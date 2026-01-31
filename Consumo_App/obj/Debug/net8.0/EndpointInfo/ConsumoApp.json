@@ -8134,11 +8134,11 @@
             "type": "string",
             "nullable": true
           },
-          "referencia": {
+          "nota": {
             "type": "string",
             "nullable": true
           },
-          "nota": {
+          "referencia": {
             "type": "string",
             "nullable": true
           }

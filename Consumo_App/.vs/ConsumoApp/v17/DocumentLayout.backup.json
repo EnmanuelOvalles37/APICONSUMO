@@ -3,24 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\controllers\\cxpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:controllers\\cxpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\dtos\\consumosdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:dtos\\consumosdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\controllers\\consumoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:controllers\\consumoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\controllers\\pagosproveedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:controllers\\pagosproveedorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\controllers\\refinanciamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:controllers\\refinanciamientocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -55,64 +47,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CxPController.cs",
-              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\CxPController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CxPController.cs",
-              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\CxPController.cs",
-              "RelativeToolTip": "Controllers\\CxPController.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAAAACEBAAA4AAAAAAAAAA==",
+              "Title": "ConsumosDtos.cs",
+              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\DTOs\\ConsumosDtos.cs",
+              "RelativeDocumentMoniker": "DTOs\\ConsumosDtos.cs",
+              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\DTOs\\ConsumosDtos.cs",
+              "RelativeToolTip": "DTOs\\ConsumosDtos.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAQwDkAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T03:47:22.302Z",
+              "WhenOpened": "2026-01-31T05:30:25.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAoBAAAAAAAAAAAiwF0BAAAJAAAAAAAAAA==",
+              "Title": "ConsumosController.cs",
+              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\ConsumosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ConsumosController.cs",
+              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\ConsumosController.cs*",
+              "RelativeToolTip": "Controllers\\ConsumosController.cs*",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwK0AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-31T02:41:31.891Z",
+              "WhenOpened": "2026-01-31T05:27:07.677Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PagosProveedorController.cs",
-              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\PagosProveedorController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PagosProveedorController.cs",
-              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\PagosProveedorController.cs",
-              "RelativeToolTip": "Controllers\\PagosProveedorController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALoCAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T03:12:30.469Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RefinanciamientoController.cs",
-              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\RefinanciamientoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RefinanciamientoController.cs",
-              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\RefinanciamientoController.cs",
-              "RelativeToolTip": "Controllers\\RefinanciamientoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-28T01:22:39.652Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHkAAAAdAAAAAAAAAA==",
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "Controllers\\ClientesController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAqwH4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T22:54:34.048Z"
+              "WhenOpened": "2026-01-31T05:25:35.262Z",
+              "EditorCaption": ""
             }
           ]
         }

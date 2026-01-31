@@ -224,25 +224,39 @@ namespace Consumo_App.Controllers
 
                 // 3) Validar cliente y obtener empresa
                 const string sqlCliente = @"
-                    SELECT 
-                        c.Id, c.Nombre, c.Saldo, c.SaldoOriginal, c.Activo, c.EmpresaId,
-                        e.Id AS EmpresaId, e.Nombre AS EmpresaNombre, e.Activo AS EmpresaActiva, e.LimiteCredito
-                    FROM Clientes c
-                    INNER JOIN Empresas e ON c.EmpresaId = e.Id
-                    WHERE c.Id = @ClienteId AND c.Activo = 1";
+    SELECT 
+        c.Id AS ClienteId,
+        c.Nombre AS ClienteNombre,
+        CAST(c.Saldo AS DECIMAL(18,2)) AS Saldo,
+        CAST(c.SaldoOriginal AS DECIMAL(18,2)) AS SaldoOriginal,
+        c.Activo AS ClienteActivo,
+        c.EmpresaId,
+        e.Nombre AS EmpresaNombre, 
+        e.Activo AS EmpresaActiva, 
+        CAST(ISNULL(e.Limite_Credito, 0) AS DECIMAL(18,2)) AS LimiteCredito
+    FROM Clientes c
+    INNER JOIN Empresas e ON c.EmpresaId = e.Id
+    WHERE c.Id = @ClienteId";
 
                 var clienteData = await connection.QueryFirstOrDefaultAsync<dynamic>(
                     sqlCliente, new { dto.ClienteId }, transaction);
 
                 if (clienteData == null)
-                    return BadRequest(new { message = "Cliente inválido o inactivo." });
+                    return BadRequest(new
+                    {
+                        message = "Cliente no encontrado.",
+                        clienteIdBuscado = dto.ClienteId
+                    });
+
+                if (!(bool)clienteData.ClienteActivo)
+                    return BadRequest(new { message = "El cliente está inactivo." });
 
                 if (!(bool)clienteData.EmpresaActiva)
                     return BadRequest(new { message = "La empresa del cliente está inactiva." });
 
                 decimal saldoCliente = clienteData.Saldo;
                 int empresaId = clienteData.EmpresaId;
-                decimal limiteCredito = clienteData.LimiteCredito ?? 0m;
+                decimal limiteCredito = clienteData.LimiteCredito;
 
                 // 4) Validar saldo disponible del cliente
                 if (saldoCliente < dto.Monto)

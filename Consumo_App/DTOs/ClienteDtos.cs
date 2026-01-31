@@ -67,6 +67,17 @@
     bool Activo
 );
 
-    public record ClienteMatchDto(int ClienteId, string Nombre, int? EmpresaId, string EmpresaNombre, decimal Saldo);
+    //public record ClienteMatchDto(int ClienteId, string Nombre, int? EmpresaId, string EmpresaNombre, decimal Saldo);
 
+    public class ClienteMatchDto
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; } = string.Empty;
+        public int EmpresaId { get; set; }
+        public string EmpresaNombre { get; set; } = string.Empty;
+        public decimal Saldo { get; set; }
+
+        // Constructor sin parámetros requerido por Dapper
+        public ClienteMatchDto() { }
+    }
 }

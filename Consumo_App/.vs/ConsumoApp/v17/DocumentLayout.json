@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\dtos\\consumosdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:dtos\\consumosdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\controllers\\consumoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:controllers\\consumoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|c:\\users\\isaac\\documents\\apiconsumo\\consumo_app\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{267CC6F8-2AED-4492-AF94-7BE8B68C7B42}|ConsumoApp.csproj|solutionrelative:controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,6 +43,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConsumosDtos.cs",
+              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\DTOs\\ConsumosDtos.cs",
+              "RelativeDocumentMoniker": "DTOs\\ConsumosDtos.cs",
+              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\DTOs\\ConsumosDtos.cs",
+              "RelativeToolTip": "DTOs\\ConsumosDtos.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAQwDkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T05:30:25.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConsumosController.cs",
+              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\ConsumosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ConsumosController.cs",
+              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\ConsumosController.cs",
+              "RelativeToolTip": "Controllers\\ConsumosController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwK0AAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T05:27:07.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClientesController.cs",
+              "DocumentMoniker": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\ClientesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ClientesController.cs",
+              "ToolTip": "C:\\Users\\Isaac\\Documents\\APICONSUMO\\Consumo_App\\Controllers\\ClientesController.cs",
+              "RelativeToolTip": "Controllers\\ClientesController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAqwH4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-31T05:25:35.262Z",
+              "EditorCaption": ""
             }
           ]
         }
