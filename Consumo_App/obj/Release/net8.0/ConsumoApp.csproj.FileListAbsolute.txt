@@ -145,3 +145,9 @@ C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\refint\Consum
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\ConsumoApp.pdb
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\ConsumoApp.genruntimeconfig.cache
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\ref\ConsumoApp.dll
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\bin\Release\net8.0\publish\appsettings.Development.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\bin\Release\net8.0\publish\appsettings.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\bin\Release\net8.0\publish\web.config
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\bin\Release\net8.0\publish\ConsumoApp.deps.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\bin\Release\net8.0\publish\ConsumoApp.runtimeconfig.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\bin\Release\net8.0\publish\ConsumoApp.staticwebassets.endpoints.json

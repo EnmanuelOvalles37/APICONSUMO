@@ -1,6 +1,12 @@
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\ConsumoApp.exe
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\publish\web.config
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\publish\appsettings.Development.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\publish\appsettings.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\publish\ConsumoApp.deps.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\publish\ConsumoApp.runtimeconfig.json
+C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\publish\ConsumoApp.staticwebassets.endpoints.json
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\ConsumoApp.dll
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\ConsumoApp.deps.json
 C:\Users\Isaac\Documents\APICONSUMO\Consumo_App\obj\Release\net8.0\PubTmp\Out\ConsumoApp.runtimeconfig.json

@@ -10,6 +10,7 @@ using Consumo_App.Seguridad;
 using Consumo_App.Servicios;
 using Consumo_App.Servicios.Sql;
 using Consumo_App.Services;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -154,9 +155,11 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
     app.UseSwaggerUI();
 }
 
+
+
 app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-  // ← Método de extensión incluido
+  
 app.Run();
