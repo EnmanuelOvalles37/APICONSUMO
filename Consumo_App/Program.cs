@@ -109,21 +109,23 @@ builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProv
 // =======================
 // CORS
 // =======================
-builder.Services.AddCors(options =>  
+
+builder.Services.AddCors(options =>
 {
-    options.AddPolicy("CorsPolicy", policy =>
+    options.AddPolicy("AllowVercel", policy =>
     {
         policy
             .WithOrigins(
-                "http://localhost:5173",
-                "http://localhost:7189",
-                "http://localhost:3000",
-                "http://localhost:80"
+               "https://front-test-wbpl.vercel.app"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
 });
+
+//http://enmanuelovalles-001-site1.stempurl.com
+//https://enmanuelovalles-001-site1.stempurl.com
+
 
 // =======================
 // SERVICES / DI
@@ -157,7 +159,7 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 
 
 
-app.UseCors("CorsPolicy");
+app.UseCors("AllowVercel");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

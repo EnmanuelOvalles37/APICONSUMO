@@ -5,7 +5,7 @@ using Consumo_App.Models.Pagos;
 using Consumo_App.Servicios;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
+using System.Data.SqlClient;
 using System.Data;
 using System.Globalization;
 
